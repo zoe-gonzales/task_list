@@ -9,11 +9,13 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
   end
   # render form and generates empty instance
-  def new;
+  def new
     @task = Task.new
   end
   # render form to edit record
-  def edit; end
+  def edit
+    @task = Task.find(params[:id])
+  end
   # saves new record (same as POST request)
   def create
     # render plain: params[:task].inspect
@@ -28,6 +30,13 @@ class TasksController < ApplicationController
 
   # updates record (same as PUT)
   def update
+    @task = Task.find(params[:id])
+
+    if @task.update(task_params)
+      redirect_to @task
+    else
+      render 'edit'
+    end
   end
 
   # deletes record (same as DELETE)

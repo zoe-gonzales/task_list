@@ -1,10 +1,5 @@
-<%= form_with scope: :task, local: true do |form| %>
-    <p>
-      <%= form.label :text %><br>
-      <%= form.text_area :text %>
-    </p>
-    <p>
-      <%= form.submit %>
-    </p>
-<% end %>
+<h1>New Task</h1>
+
+<%= render 'form' %>
+
 <%= link_to 'go back', tasks_path %>
