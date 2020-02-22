@@ -6,6 +6,12 @@ class SubTasksController < ApplicationController
         redirect_to task_path(@task)
     end
 
+    def show
+        @task = Task.find(params[:task_id])
+        puts @task
+        @sub_task = @task.sub_tasks.find(params[:id])
+    end
+
     def destroy
         @task = Task.find(params[:task_id])
         @sub_task = @task.sub_tasks.find(params[:id])

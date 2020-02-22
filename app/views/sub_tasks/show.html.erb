@@ -1,0 +1,13 @@
+<p>
+  <strong>Sub Task:</strong>
+  <%= @sub_task.text %>
+</p>
+
+<p>
+  <%= link_to 'Edit', edit_task_sub_task_path(@task, @sub_task) %>
+  <%= link_to 'Delete', [@sub_task.task, @sub_task],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>
+
+<%= link_to 'go back', task_path(@task) %>
