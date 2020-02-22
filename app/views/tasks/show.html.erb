@@ -3,14 +3,10 @@
   <%= @task.text %>
 </p>
 
-<h2>Add a sub-task:</h2>
-  <%= form_with(model: [ @task, @task.sub_tasks.build ], local: true) do |form| %>
-    <p>
-      <%= form.text_area :text %>
-    </p>
-    <p>
-      <%= form.submit %>
-    </p>
-  <% end %>
+<h4>Sub Tasks</h4>
+<%= render @task.sub_tasks %>
+
+<h4>Add a Sub Task:</h4>
+<%= render 'sub_tasks/form' %>
 
 <%= link_to 'go back', tasks_path %>

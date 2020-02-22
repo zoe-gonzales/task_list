@@ -1,0 +1,10 @@
+<p>
+  <strong>Sub Task:</strong>
+  <%= sub_task.text %>
+</p>
+
+<p>
+  <%= link_to 'Destroy Sub Task', [sub_task.task, sub_task],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>

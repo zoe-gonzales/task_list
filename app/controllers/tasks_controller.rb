@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  http_basic_authenticate_with name: "zoe", password: "zoe", except: [:index, :show]
   # all public routes must come before private ones
   # display all records
   def index
