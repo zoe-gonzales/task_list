@@ -1,5 +1,12 @@
 <h1>Edit Sub Task</h1>
- 
-<%= render 'sub_tasks/form' %>
- 
-<%= link_to 'go back', tasks_path %>
+
+<%= form_with(model: [ @task, @sub_task ], local: true) do |form| %>
+  <p>
+    <%= form.text_area :text %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'go back', task_sub_task_path(@task, @sub_task) %>

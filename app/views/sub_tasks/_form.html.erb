@@ -1,8 +1,8 @@
 <%= form_with(model: [ @task, @task.sub_tasks.build ], local: true) do |form| %>
-    <p>
-      <%= form.text_area :text %>
-    </p>
-    <p>
-      <%= form.submit %>
-    </p>
+  <p>
+    <%= form.text_area :text %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
 <% end %>
